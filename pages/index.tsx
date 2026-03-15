@@ -1,17 +1,9 @@
-import Image from 'next/image';
-import { Geist, Geist_Mono } from 'next/font/google';
 import Title from '@/components/title';
-
-const geistSans = Geist({
-   variable: '--font-geist-sans',
-   subsets: ['latin'],
-});
-
-const geistMono = Geist_Mono({
-   variable: '--font-geist-mono',
-   subsets: ['latin'],
-});
+import { ReactNode } from 'react';
+import SearchLayout from '@/components/layout/search-layout';
 
 export default function Home() {
    return <Title>Home</Title>;
 }
+
+Home.getLayout = (page: ReactNode) => <SearchLayout>{page}</SearchLayout>;
