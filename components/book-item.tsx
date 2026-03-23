@@ -7,7 +7,7 @@ interface Props {
 const BookItem: FC<Props> = ({ book }: Props) => {
    return (
       <div className="flex gap-3">
-         <img src={'https://picsum.photos/200/300'} alt={book.title} width={100} height={150} />
+         <img src={`https://picsum.photos/seed/${book.id}/200/300`} alt={book.title} width={100} height={150} />
          <div className="flex flex-col">
             <div className="flex">
                <span className="text-neutral-500 font-bold">[{book.category}]&nbsp;</span>
