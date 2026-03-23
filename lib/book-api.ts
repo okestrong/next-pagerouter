@@ -13,3 +13,17 @@ export async function fetchBooks(): Promise<BookType[]> {
       return [];
    }
 }
+
+export async function fetchRecoBooks(): Promise<BookType[]> {
+   try {
+      const res = await fetch(`${API_URL}/book/random`);
+      if (res.status === 200) {
+         return await res.json();
+      } else {
+         throw new Error(res.statusText);
+      }
+   } catch (error) {
+      console.error(error);
+      return [];
+   }
+}
