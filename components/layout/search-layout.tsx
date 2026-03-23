@@ -1,4 +1,4 @@
-import React, { FC, ReactNode, useCallback, useState } from 'react';
+import React, { FC, ReactNode, useState } from 'react';
 import { useRouter } from 'next/router';
 
 interface Props {
@@ -8,7 +8,6 @@ interface Props {
 const SearchLayout: FC<Props> = ({ children }: Props) => {
    const [search, setSearch] = useState('');
    const router = useRouter();
-   const { q } = router.query;
 
    const onChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
       setSearch(e.target.value);
