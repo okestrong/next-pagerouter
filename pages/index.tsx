@@ -5,8 +5,7 @@ import { fetchBooks, fetchRecoBooks } from '@/lib/book-api';
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
 
 export const getServerSideProps: GetServerSideProps = async ctx => {
-   const books = await fetchBooks();
-   const recoBooks = await fetchRecoBooks();
+   const [books, recoBooks] = await Promise.all([fetchBooks(), fetchRecoBooks()]);
    return {
       props: {
          books,
